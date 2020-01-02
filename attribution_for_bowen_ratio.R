@@ -2,7 +2,9 @@ rm(list = ls())
 # loading required libraries 
 library(Deriv)
 
-# Please refer a paper 000 for the details 
+# Please refer a paper
+# 000 
+# for the details 
 
 ## Delta Bowen ratio
 # partial derivative for Bowen Ratio
@@ -25,18 +27,20 @@ diff_SWin   <- Deriv(bowen,'SWin')
 diff_LWin   <- Deriv(bowen,'LWin')
 diff_ra     <- Deriv(bowen,'ra')
 diff_rs     <- Deriv(bowen,'rs')
+diff_emis   <- Deriv(bowen,'emis')
 diff_qa     <- Deriv(bowen,'qa')
 diff_albedo <- Deriv(bowen,'albedo')
 diff_G      <- Deriv(bowen,'G')
 
 # calculations
-dBn_dswd  = diff_SWin(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_dswd   = diff_SWin(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
 dBn_dalpha = diff_albedo(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
-dBn_drld = diff_LWin(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
-dBn_dra = diff_ra(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
-dBn_drs = diff_rs(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
-dBn_dqa = diff_qa(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
-dBn_dTa = diff_Ta(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
-dBn_dGrnd = diff_G(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_drld   = diff_LWin(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_dra    = diff_ra(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_drs    = diff_rs(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_demis  = diff_emis(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_dqa    = diff_qa(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_dTa    = diff_Ta(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
+dBn_dGrnd  = diff_G(Ta,Press,SWin,LWin,ra,rs,emis,qa,albedo,G)
 
 
